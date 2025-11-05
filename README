@@ -1,0 +1,22 @@
+# Gestión Usuarios y Roles
+## Requisitos
+- Node.js
+- PostgreSQL
+## Instalación
+1. Clona el proyecto.
+2. Copia `.env.example` a `.env` y ajusta las credenciales.
+3. Ejecuta `npm install`.
+4. Crea la base de datos (por ejemplo con `createdb users_roles_db`).
+5. Ejecuta migraciones: `npx sequelize-cli db:migrate`.
+6. Levanta el servidor: `npm run dev` o `npm start`.
+11
+## Rutas
+- `GET /` - health check
+- `POST /api/roles` - crear rol
+- `GET /api/roles` - listar roles
+- `POST /api/users` - crear usuario
+- `GET /api/users` - listar usuarios
+## Notas
+- Las contraseñas se almacenan hasheadas con bcrypt.
+- Las operaciones que modifican varias tablas usan transacciones en los
+controladores.
